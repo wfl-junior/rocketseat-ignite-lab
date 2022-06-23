@@ -4,6 +4,7 @@ import { DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { useLessonBySlugQuery } from "src/graphql/hooks/useLessonBySlugQuery";
+import { RocketseatLogo } from "../RocketseatLogo";
 import { Card } from "./Card";
 import { LinkButton } from "./LinkButton";
 
@@ -103,6 +104,25 @@ export const Video: React.FC = () => {
           />
         </div>
       </div>
+
+      {/* footer */}
+      <footer className="mx-auto flex max-w-[1100px] items-center gap-6 border-t border-gray-500 py-6">
+        <a
+          href="https://www.rocketseat.com.br/"
+          target="_blank"
+          className="cursor-pointer"
+        >
+          <RocketseatLogo />
+        </a>
+
+        <p className="text-gray-300">
+          Rocketseat - Todos os direitos reservados
+        </p>
+
+        <a href="#" className="ml-auto cursor-pointer text-gray-300">
+          Políticas de privacidade
+        </a>
+      </footer>
     </Fragment>
   );
 };

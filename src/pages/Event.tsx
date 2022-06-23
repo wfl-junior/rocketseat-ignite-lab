@@ -6,9 +6,10 @@ export const Event: React.FC = () => (
   <div className="flex min-h-screen flex-col">
     <Header />
     <main className="flex flex-1">
-      <div className="flex-1">
+      <section className="flex-1">
         <Video />
-      </div>
+      </section>
+
       <Sidebar />
     </main>
   </div>
