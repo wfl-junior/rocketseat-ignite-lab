@@ -3,27 +3,27 @@ import { format, isPast } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import { CheckCircle, Lock } from "phosphor-react";
 import { Fragment } from "react";
-import { Lesson as ILesson } from "src/@types/api";
+import { Link } from "react-router-dom";
+import { LessonForLessonQuery } from "src/@types/api";
 
-type LessonProps = ILesson;
-
-export const Lesson: React.FC<LessonProps> = ({
+export const Lesson: React.FC<LessonForLessonQuery> = ({
   title,
   availableAt,
   lessonType,
+  slug,
 }) => {
   const availableAtDate = new Date(availableAt);
   const isLessonAvailable = isPast(availableAtDate);
 
   return (
-    <a href="#">
+    <Link to={`/event/lesson/${slug}`} className="group cursor-pointer">
       <span className="text-gray-300">
         {format(availableAtDate, "EEEE' • 'd' de 'MMMM' • 'k'h'mm", {
           locale: ptBR,
         })}
       </span>
 
-      <div className="mt-2 rounded border border-gray-500 p-4">
+      <div className="mt-2 rounded border border-gray-500 p-4 transition-colors group-hover:border-green-500">
         <header className="flex items-center justify-between">
           <span
             className={classNames(
@@ -51,6 +51,6 @@ export const Lesson: React.FC<LessonProps> = ({
 
         <strong className="mt-5 block font-bold text-gray-200">{title}</strong>
       </div>
-    </a>
+    </Link>
   );
 };
