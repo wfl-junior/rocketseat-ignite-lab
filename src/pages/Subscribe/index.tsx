@@ -1,5 +1,6 @@
 import { Logo } from "src/components/Logo";
 import { CreateSubscriberForm } from "./CreateSubscriberForm";
+import codeMockupImage from "/src/assets/code-mockup.png";
 
 export const Subscribe: React.FC = () => (
   <div className="flex min-h-screen flex-col items-center bg-blur bg-cover bg-no-repeat">
@@ -29,10 +30,6 @@ export const Subscribe: React.FC = () => (
       </div>
     </div>
 
-    <img
-      src="/src/assets/code-mockup.png"
-      alt="Code Mockup"
-      className="mt-10"
-    />
+    <img src={codeMockupImage} alt="Code Mockup" className="mt-10" />
   </div>
 );
