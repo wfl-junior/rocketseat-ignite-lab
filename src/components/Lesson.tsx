@@ -22,17 +22,21 @@ export const Lesson: React.FC<LessonForLessonQuery> = ({
 
   return (
     <Link to={`/event/lesson/${slug}`} className="group cursor-pointer">
-      <span className="text-gray-300">
+      <time
+        className="text-gray-300"
+        dateTime={availableAtDate.toLocaleString()}
+      >
         {format(availableAtDate, "EEEE' • 'd' de 'MMMM' • 'k'h'mm", {
           locale: ptBR,
         })}
-      </span>
+      </time>
 
       <div
         className={classNames(
           "mt-2 rounded border p-4 transition-colors",
           isActiveLesson
-            ? "border-green-500 bg-green-500"
+            ? // before é a seta para a esquerda
+              "relative isolate border-green-500 bg-green-500 before:absolute before:top-1/2 before:-left-2.5 before:-z-10 before:-translate-y-1/2 before:border-y-[0.625rem] before:border-r-[0.625rem] before:border-y-transparent before:border-r-green-500"
             : "border-gray-500 group-hover:border-green-500",
         )}
       >
