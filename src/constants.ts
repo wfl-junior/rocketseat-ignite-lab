@@ -1,1 +1,1 @@
-export const firstLessonSlug = "abertura-do-evento-ignite-lab";
+export const firstLessonSlug = "abertura-ignite-lab-o-poder-do-react";
