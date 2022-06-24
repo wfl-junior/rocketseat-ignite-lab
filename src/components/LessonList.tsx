@@ -1,5 +1,5 @@
-import { useLessonsQuery } from "src/graphql/hooks/useLessonsQuery";
-import { Lesson } from "./Lesson";
+import { useLessonsQuery } from "src/graphql/generated";
+import { LessonItem } from "./LessonItem";
 
 export const LessonList: React.FC = () => {
   const { data, loading, error } = useLessonsQuery();
@@ -20,7 +20,7 @@ export const LessonList: React.FC = () => {
   return (
     <div className="flex flex-col gap-8">
       {data.lessons.map(lesson => (
-        <Lesson key={lesson.id} {...lesson} />
+        <LessonItem key={lesson.id} {...lesson} />
       ))}
     </div>
   );

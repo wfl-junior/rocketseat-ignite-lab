@@ -4,7 +4,7 @@ import { DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
 import { firstLessonSlug } from "src/constants";
-import { useLessonBySlugQuery } from "src/graphql/hooks/useLessonBySlugQuery";
+import { useLessonBySlugQuery } from "src/graphql/generated";
 import { RocketseatLogo } from "../RocketseatLogo";
 import { Card } from "./Card";
 import { LinkButton } from "./LinkButton";
@@ -30,7 +30,7 @@ export const Video: React.FC = () => {
     return <div>error... check console</div>;
   }
 
-  if (!data) {
+  if (!data?.lesson) {
     return <div>no data...</div>;
   }
 
@@ -57,25 +57,27 @@ export const Video: React.FC = () => {
             {/* description */}
             <p className="mt-4 leading-relaxed text-gray-200">{description}</p>
 
-            <div className="mt-6 flex items-center gap-4">
-              {/* teacher avatar */}
-              <img
-                src={teacher.avatarURL}
-                alt="Teacher avatar"
-                className="aspect-square h-16 rounded-full border-2 border-blue-500"
-              />
+            {teacher && (
+              <div className="mt-6 flex items-center gap-4">
+                {/* teacher avatar */}
+                <img
+                  src={teacher.avatarURL}
+                  alt="Teacher avatar"
+                  className="aspect-square h-16 rounded-full border-2 border-blue-500"
+                />
 
-              {/* teacher info */}
-              <div className="leading-relaxed">
-                <strong className="block text-2xl font-bold">
-                  {teacher.name}
-                </strong>
+                {/* teacher info */}
+                <div className="leading-relaxed">
+                  <strong className="block text-2xl font-bold">
+                    {teacher.name}
+                  </strong>
 
-                <span className="block text-sm text-gray-200">
-                  {teacher.bio}
-                </span>
+                  <span className="block text-sm text-gray-200">
+                    {teacher.bio}
+                  </span>
+                </div>
               </div>
-            </div>
+            )}
           </div>
 
           {/* buttons */}

@@ -4,16 +4,13 @@ import ptBR from "date-fns/locale/pt-BR";
 import { CheckCircle, Lock } from "phosphor-react";
 import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
-import { LessonForLessonQuery } from "src/@types/api";
 import { firstLessonSlug } from "src/constants";
+import { Lesson } from "src/graphql/generated";
 import { EventParams } from "./Video";
 
-export const Lesson: React.FC<LessonForLessonQuery> = ({
-  title,
-  availableAt,
-  lessonType,
-  slug,
-}) => {
+export const LessonItem: React.FC<
+  Pick<Lesson, "id" | "title" | "availableAt" | "lessonType" | "slug">
+> = ({ title, availableAt, lessonType, slug }) => {
   const params = useParams<EventParams>();
 
   const availableAtDate = new Date(availableAt);

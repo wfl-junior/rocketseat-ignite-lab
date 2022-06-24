@@ -1,6 +1,6 @@
 import { Form, Formik } from "formik";
 import { useNavigate } from "react-router-dom";
-import { useCreateSubscriberMutation } from "src/graphql/hooks/useCreateSubscriberMutation";
+import { useCreateSubscriberMutation } from "src/graphql/generated";
 import { createSubscriberValidationSchema } from "src/yup/createSubscriberValidationSchema";
 import { Input } from "./Input";
 
