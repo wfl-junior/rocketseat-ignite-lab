@@ -36,3 +36,16 @@ export interface LessonQueryResponse {
 export interface LessonBySlugQueryVariables {
   slug: string;
 }
+
+export interface Subscriber {
+  id: string;
+}
+
+export interface CreateSubscriberMutationResponse {
+  createSubscribe: Subscriber;
+}
+
+export interface CreateSubscriberMutationVariables {
+  name: string;
+  email: string;
+}

@@ -3,6 +3,7 @@ import { DefaultUi, Player, Youtube } from "@vime/react";
 import { DiscordLogo, FileArrowDown, Image, Lightning } from "phosphor-react";
 import { Fragment } from "react";
 import { useParams } from "react-router-dom";
+import { firstLessonSlug } from "src/constants";
 import { useLessonBySlugQuery } from "src/graphql/hooks/useLessonBySlugQuery";
 import { RocketseatLogo } from "../RocketseatLogo";
 import { Card } from "./Card";
@@ -11,8 +12,6 @@ import { LinkButton } from "./LinkButton";
 export type EventParams = {
   slug: string;
 };
-
-const firstLessonSlug = "abertura-do-evento-ignite-lab";
 
 export const Video: React.FC = () => {
   const { slug } = useParams<EventParams>();
