@@ -6,6 +6,7 @@ import { Fragment } from "react";
 import { Link, useParams } from "react-router-dom";
 import { LessonForLessonQuery } from "src/@types/api";
 import { firstLessonSlug } from "src/constants";
+import { EventParams } from "./Video";
 
 export const Lesson: React.FC<LessonForLessonQuery> = ({
   title,
@@ -13,7 +14,7 @@ export const Lesson: React.FC<LessonForLessonQuery> = ({
   lessonType,
   slug,
 }) => {
-  const params = useParams<{ slug: string }>();
+  const params = useParams<EventParams>();
 
   const availableAtDate = new Date(availableAt);
   const isLessonAvailable = isPast(availableAtDate);

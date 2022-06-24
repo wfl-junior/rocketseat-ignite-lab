@@ -1,5 +1,5 @@
 import { Logo } from "src/components/Logo";
-import { Form } from "./Form";
+import { CreateSubscriberForm } from "./CreateSubscriberForm";
 
 export const Subscribe: React.FC = () => (
   <div className="flex min-h-screen flex-col items-center bg-blur bg-cover bg-no-repeat">
@@ -25,7 +25,7 @@ export const Subscribe: React.FC = () => (
           Inscreva-se gratuitamente
         </strong>
 
-        <Form />
+        <CreateSubscriberForm />
       </div>
     </div>
 
