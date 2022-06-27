@@ -1,8 +1,6 @@
 export const Logo: React.FC = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="237"
-    height="34"
     fill="none"
     viewBox="0 0 237 34"
     className="h-[24px] w-[167px] sm:h-[34px] sm:w-[237px]"

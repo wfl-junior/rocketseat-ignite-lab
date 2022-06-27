@@ -39,31 +39,33 @@ export const Video: React.FC = () => {
       </div>
 
       <div className="mx-auto max-w-[1100px] p-8">
-        <div className="flex items-start gap-16">
+        <div className="flex flex-col gap-6 md:flex-row md:items-start md:gap-16">
           <div className="flex-1">
             {!data ? (
               <div className="flex flex-col gap-4">
                 {error ? (
-                  <strong className="text-2xl font-bold">
+                  <strong className="text-lg font-bold lg:text-2xl">
                     {defaultErrorMessage}
                   </strong>
                 ) : (
-                  <Skeleton className="h-7 w-full rounded" />
+                  <Skeleton className="h-4.5 w-full rounded lg:h-7" />
                 )}
 
                 <div className="flex flex-col gap-2">
-                  <Skeleton className="h-4 w-full rounded" />
-                  <Skeleton className="h-4 w-full rounded" />
-                  <Skeleton className="h-4 w-3/4 rounded" />
+                  <Skeleton className="h-3.5 w-full rounded lg:h-4" />
+                  <Skeleton className="h-3.5 w-full rounded lg:h-4" />
+                  <Skeleton className="h-3.5 w-3/4 rounded lg:h-4" />
                 </div>
               </div>
             ) : (
               <Fragment>
                 {/* title */}
-                <h1 className="text-2xl font-bold">{data.lesson?.title}</h1>
+                <h1 className="text-lg font-bold lg:text-2xl">
+                  {data.lesson?.title}
+                </h1>
 
                 {/* description */}
-                <p className="mt-4 leading-relaxed text-gray-200">
+                <p className="mt-4 text-sm leading-relaxed text-gray-200 lg:text-base">
                   {data.lesson?.description}
                 </p>
               </Fragment>
@@ -77,8 +79,12 @@ export const Video: React.FC = () => {
 
                   {/* teacher info */}
                   <div className="flex w-full flex-col gap-2">
-                    <Skeleton className="h-7 w-1/3 rounded" />
-                    <Skeleton className="h-3 w-1/2 rounded" />
+                    <Skeleton className="h-4.5 w-1/3 rounded lg:h-7" />
+
+                    <div className="flex flex-col gap-1">
+                      <Skeleton className="h-3 w-full rounded md:w-full xl:w-full" />
+                      <Skeleton className="h-3 w-2/3 rounded md:w-4/5 xl:w-2/3" />
+                    </div>
                   </div>
                 </div>
               </Fragment>
@@ -95,7 +101,7 @@ export const Video: React.FC = () => {
 
                     {/* teacher info */}
                     <div className="leading-relaxed">
-                      <strong className="block text-2xl font-bold">
+                      <strong className="block text-lg font-bold lg:text-2xl">
                         {data.lesson.teacher.name}
                       </strong>
 
@@ -120,7 +126,7 @@ export const Video: React.FC = () => {
         </div>
 
         {/* cards */}
-        <div className="mt-20 grid grid-cols-2 gap-8">
+        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:mt-20 lg:grid-cols-1 xl:grid-cols-2">
           <Card
             heading="Material complementar"
             description="Acesse o material complementar para acelerar o seu desenvolvimento"

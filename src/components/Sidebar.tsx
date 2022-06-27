@@ -8,7 +8,7 @@ export const Sidebar: React.FC = () => {
   return (
     <aside
       className={classNames(
-        "fixed right-0 bottom-0 top-[75px] z-[100] w-[348px] max-w-full translate-x-full overflow-y-auto border-l border-gray-600 bg-gray-700 p-6 transition-transform duration-300 lg:translate-x-0",
+        "fixed right-0 bottom-0 top-[75px] z-[100] w-full translate-x-full overflow-y-auto border-l border-gray-600 bg-gray-700 p-6 transition-transform duration-300 md:w-[348px] lg:translate-x-0",
         {
           "translate-x-0": isSidebarOpen,
         },
