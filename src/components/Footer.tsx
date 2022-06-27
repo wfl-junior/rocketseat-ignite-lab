@@ -2,7 +2,7 @@ import { RocketseatLogo } from "./RocketseatLogo";
 
 export const Footer: React.FC = () => (
   <footer className="w-full border-t border-gray-500 bg-gray-900">
-    <div className="relative mx-auto flex max-w-[1100px] items-center gap-6 py-6">
+    <div className="relative mx-auto flex max-w-[1100px] items-center gap-6 p-6">
       <a
         href="https://www.rocketseat.com.br/"
         target="_blank"
