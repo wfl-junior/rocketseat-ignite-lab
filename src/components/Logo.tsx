@@ -5,6 +5,7 @@ export const Logo: React.FC = () => (
     height="34"
     fill="none"
     viewBox="0 0 237 34"
+    className="h-[24px] w-[167px] sm:h-[34px] sm:w-[237px]"
   >
     <path
       fill="#fff"
