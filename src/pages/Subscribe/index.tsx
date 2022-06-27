@@ -1,3 +1,4 @@
+import { Footer } from "src/components/Footer";
 import { Logo } from "src/components/Logo";
 import { CreateSubscriberForm } from "./CreateSubscriberForm";
 import codeMockupImage from "/src/assets/code-mockup.png";
@@ -31,5 +32,7 @@ export const Subscribe: React.FC = () => (
     </div>
 
     <img src={codeMockupImage} alt="Code Mockup" className="mt-10" />
+
+    <Footer />
   </div>
 );
