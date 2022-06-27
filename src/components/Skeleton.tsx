@@ -6,7 +6,7 @@ interface SkeletonProps {
 }
 
 export const Skeleton: React.FC<SkeletonProps> = ({ className, children }) => (
-  <div className={classNames("animate-pulse bg-gray-700", className)}>
+  <div className={classNames("animate-pulse bg-gray-600", className)}>
     {children}
   </div>
 );
