@@ -5,7 +5,8 @@ import { Video } from "src/components/Video";
 export const Event: React.FC = () => (
   <div className="flex min-h-screen flex-col">
     <Header />
-    <main className="flex flex-1">
+
+    <main className="flex w-full overflow-y-auto pr-[348px]">
       <section className="flex-1">
         <Video />
       </section>
