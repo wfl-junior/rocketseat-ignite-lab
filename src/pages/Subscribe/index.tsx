@@ -2,10 +2,17 @@ import { Footer } from "src/components/Footer";
 import { Logo } from "src/components/Logo";
 import { CreateSubscriberForm } from "./CreateSubscriberForm";
 import codeMockupImage from "/src/assets/code-mockup.png";
+import ReactImage from "/src/assets/React.svg";
 
 export const Subscribe: React.FC = () => (
   <div className="flex min-h-screen flex-col items-center bg-blur bg-cover bg-no-repeat">
     <div className="mx-auto mt-20 flex w-full max-w-[1100px] items-center justify-between">
+      <img
+        src={ReactImage}
+        alt="React"
+        className="absolute inset-x-0 top-0 mx-auto"
+      />
+
       <div className="max-w-[640px]">
         <Logo />
 
